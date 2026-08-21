@@ -1,3 +1,4 @@
+import 'package:bmi_aug/bmicalc.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -70,6 +71,7 @@ class BMIScreen extends StatelessWidget {
 
                     ElevatedButton(
                       onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>bmicalc(),));
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF4C417A),
