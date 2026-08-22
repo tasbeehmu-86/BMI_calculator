@@ -1,7 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:bmi_aug/bmicalc.dart';
 
-class calcresult extends StatelessWidget {
-  const calcresult ({super.key});
+class result extends StatelessWidget {
+  final String name;
+  final int age;
+  final String gender;
+  final double bmi;
+  final String height;
+  final String weight;
+  final String category;
+
+  const result({
+    super.key,
+    required this.name,
+    required this.age,
+    required this.gender,
+    required this.bmi,
+    required this.height,
+    required this.weight,
+    required this.category,
+  });
+
+  String getCategoryText() {
+    if (category == "Underweight") {
+      return "Your BMI indicates that you are underweight. It may be helpful to focus on a balanced diet that provides enough nutrients and calories to support a healthy weight.";
+    } else if (category == "Normal") {
+      return "Your BMI is within the normal range. Keep maintaining a balanced diet and regular physical activity to support your overall health.";
+    } else if (category == "Overweight") {
+      return "Your BMI indicates that you are overweight. Maintaining a balanced diet and regular physical activity can help you work toward a healthier weight.";
+    } else {
+      return "Your BMI indicates that you are in the obese range. A balanced diet, regular physical activity, and guidance from a healthcare professional can help you work toward a healthier weight.";
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +61,8 @@ class calcresult extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "Samy Call",
+                            Text(
+                              name,
                               style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.w700,
@@ -42,40 +72,38 @@ class calcresult extends StatelessWidget {
 
                             const SizedBox(height: 10),
 
-                            const Text(
-                              "A 23 years old male.",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
+                            Text(
+                              "A $age years old $gender.",                              style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white,
+                            ),
+                            ),
+
+                            SizedBox(height: 25),
+
+                            Center(
+                              child: Text(
+                                bmi.toStringAsFixed(1),                                style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
+                              ),
                               ),
                             ),
 
-                             SizedBox(height: 25),
+                            SizedBox(height: 5),
 
-                             Center(
-                               child: Text(
-                                "16.5",
-                                style: TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white,
-                                ),
-                                                           ),
-                             ),
-
-                             SizedBox(height: 5),
-
-                             Center(
-                               child: Text(
+                            Center(
+                              child: Text(
                                 "BMI Calc",
                                 style: TextStyle(
                                   fontSize: 25,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.white,
                                 ),
-                                                           ),
-                             ),
+                              ),
+                            ),
 
                             const SizedBox(height: 25),
 
@@ -85,13 +113,12 @@ class calcresult extends StatelessWidget {
                                   crossAxisAlignment:
                                   CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      "180 cm",
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                      ),
+                                    Text(
+                                      height,                                      style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ),
                                     ),
                                     const SizedBox(height: 5),
                                     const Text(
@@ -119,13 +146,12 @@ class calcresult extends StatelessWidget {
                                   crossAxisAlignment:
                                   CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      "70 kg",
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white,
-                                      ),
+                                    Text(
+                                      weight,                                      style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white,
+                                    ),
                                     ),
                                     const SizedBox(height: 5),
                                     const Text(
@@ -156,7 +182,7 @@ class calcresult extends StatelessWidget {
               SizedBox(height: 25),
               Container(
                 width: double.infinity,
-                height: 390,
+                height: 350,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: Color(0xff01502E),
@@ -166,26 +192,27 @@ class calcresult extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Under Weight',style: TextStyle(
-                        fontSize: 22,
+                      Text(category,style: TextStyle(
+                        fontSize: 30,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
                         letterSpacing: 1.5,
                       ),),
                       SizedBox(height: 7,),
-                      Text('Your BMI is less than 18.5',style: TextStyle(
-                        fontSize: 15,
+                      Text(  'Your BMI is ${bmi.toStringAsFixed(1)}',style: TextStyle(
+                        fontSize: 26,
                         fontWeight: FontWeight.w400,
                         color: Colors.white,
-                        letterSpacing: 0,
                       ),),
-                      SizedBox(height: 7,),
-                      Text('Lorem ipsum dolor sit amet consectetur. Sagittis interdum dui enim imperdiet sapien cursus velit pharetra. Viverra justo tempor dictum odio. Nisl non dui integer orci nulla eget laoreet tellus. Orci nunc a orci convallis ac orci. Urna auctor at elementum sit ante maecenas ullamcorper rhoncus dictum. Morbi venenatis lectus ultrices euismod. Laoreet purus risus amet enim sagittis ut. Consectetur libero orci urnager dignissi est.',style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                        letterSpacing: 0,
-                      ),),
+                      SizedBox(height: 10,),
+                      Text(
+                        getCategoryText(),
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -193,10 +220,13 @@ class calcresult extends StatelessWidget {
               SizedBox(height: 25),
               Center(
                 child: InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => calcresult(),));
-                  },
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const bmicalc(),
+                      ),
+                    );                  },
                   child: Container(
                     height:45,
                     width: 332,
