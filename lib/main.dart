@@ -15,10 +15,7 @@ class BMIScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F8FF),
-        body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Column(
+      body: Column(
           children: [
             Expanded(
               child: Padding(
@@ -52,8 +49,7 @@ class BMIScreen extends StatelessWidget {
                         height: 1.4,
                       ),
                     ),
-                    const SizedBox(height: 15),
-                    const Spacer(),
+                    const SizedBox(height: 10),
 
                     const Text(
                       'It takes just 30 seconds – and your health is\nworth it!',
@@ -64,7 +60,7 @@ class BMIScreen extends StatelessWidget {
                       ),
                     ),
 
-                    const Spacer(),
+                    const SizedBox(height: 10),
 
                     const Divider(
                       color: Colors.white,
@@ -98,7 +94,6 @@ class BMIScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),)
     );
   }
 }

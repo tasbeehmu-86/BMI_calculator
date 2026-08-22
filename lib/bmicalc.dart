@@ -90,7 +90,7 @@ class _bmicalcState extends State<bmicalc> {
 
                 SizedBox(
                   width: 340,
-                  height: 30,
+                  height: 20,
                 ),
 
                 Text(
@@ -135,7 +135,7 @@ class _bmicalcState extends State<bmicalc> {
 
                 SizedBox(
                   width: 340,
-                  height: 45,
+                  height: 40,
                 ),
 
                 Text(
@@ -214,7 +214,7 @@ class _bmicalcState extends State<bmicalc> {
 
                         SizedBox(
                           width: 340,
-                          height: 45,
+                          height: 20,
                         ),
 
                         Text(
@@ -228,7 +228,7 @@ class _bmicalcState extends State<bmicalc> {
 
                         SizedBox(
                           width: 340,
-                          height: 30,
+                          height: 20,
                         ),
 
                         Padding(
@@ -240,7 +240,6 @@ class _bmicalcState extends State<bmicalc> {
 
                             children: [
 
-                              // Male
                               Column(
                                 children: [
 
@@ -483,7 +482,7 @@ class _bmicalcState extends State<bmicalc> {
                   ),
                 ),
 
-                SizedBox(height: 30),
+                SizedBox(height: 6),
               ],
             ),
           ),
@@ -495,7 +494,7 @@ class _bmicalcState extends State<bmicalc> {
 
         child: SizedBox(
           width: double.infinity,
-          height: 55,
+          height: 50,
 
           child: ElevatedButton(
 
@@ -503,7 +502,6 @@ class _bmicalcState extends State<bmicalc> {
 
               if (formKey.currentState!.validate()) {
 
-                // Check Gender
                 if (selectedGender == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
