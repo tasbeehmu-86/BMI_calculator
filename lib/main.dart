@@ -44,7 +44,7 @@ class BMIScreen extends StatelessWidget {
                       'Know Your Body Better ,\nGet Your BMI Score in Less\nThan a Minute!',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         height: 1.4,
                       ),
