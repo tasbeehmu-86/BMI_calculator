@@ -394,7 +394,7 @@ class _bmicalcState extends State<bmicalc> {
                         ),
                       ),
 
-                      SizedBox(width: 110),
+                      SizedBox(width: 90),
 
                       IconButton(
                         icon: Icon(
@@ -463,7 +463,7 @@ class _bmicalcState extends State<bmicalc> {
                         ),
                       ),
 
-                      SizedBox(width: 120),
+                      SizedBox(width: 100),
 
                       IconButton(
                         icon: Icon(
