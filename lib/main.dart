@@ -15,7 +15,10 @@ class BMIScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F8FF),
-      body: Column(
+        body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
           children: [
             Expanded(
               child: Padding(
@@ -94,6 +97,9 @@ class BMIScreen extends StatelessWidget {
             ),
           ],
         ),
+      )
+
+      )
     );
   }
 }
